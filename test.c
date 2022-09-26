@@ -47,7 +47,7 @@ void init_tiles()
     }
 
     // tile 2 - pure black
-    // testchar will be set in asm
+    // value of blacktile will be set in asm
     for (i = 32; i < 48; i++)
     {
         TILEDATA[i] = blacktile;
