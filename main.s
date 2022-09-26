@@ -88,18 +88,14 @@ EntryPoint:
 
 ; Switch on lcd
 _EnableLCD:
-    push af
     ld a, (LCDCF_ON | LCDCF_BGON | LCDCF_BG9800 | LCDCF_BG8800)
     ld [rLCDC], a
-    pop af
     ret
 
 ; Switch off lcd
 _DisableLCD:
-    push af
     ld a, 0
     ld [rLCDC], a
-    pop af
     ret
 
 ; Set the backgound palette
