@@ -8,7 +8,7 @@ In the example linker script, the `_CODE` section is put into ROM0 and the `_DAT
 For bigger projects, you may need to use ROM and RAM banks to store the extra code and data.
 
 The sections which the data and code will go into can be changed on a per-file basis.
-You can use the -bo and -ba options to sdcc, which will append bank numbers to the `_CODE` and `_DATA` section names. e.g.
+You can use the -bo and -ba options to sdcc, which can be used to append bank numbers to the `_CODE` and `_DATA` section names. e.g.
 
 ```sdcc -bo 2 -ba 3 -c test.c -o test.o```
 
