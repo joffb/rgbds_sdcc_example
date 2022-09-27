@@ -12,4 +12,5 @@ sdcc -c test.c -msm83 -o obj\test.o
 ..\rgbds\rgblink -v -d -n rgbds_sdcc.sym -l linkerscript.ls -o rgbds_sdcc.gb obj\main.o obj\test.o
 
 @REM properly set up the rom
-..\rgbds\rgbfix -v -l 0x33 -p 255 -t rgbds_sdcc rgbds_sdcc.gb
+@REM using MBC5 so we can use banks
+..\rgbds\rgbfix -v -l 0x33 -p 255 -m MBC5 -t rgbds_sdcc rgbds_sdcc.gb

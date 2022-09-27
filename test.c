@@ -1,6 +1,12 @@
 // RGBDS/SDCC interop testing
 // Joe Kennedy 2022
 
+// This specifies the name of the section in which the code and const data will be placed
+// If this isn't specified, the section will default to "_CODE"
+// This name (prefixed with a _) can be used in the linkerscript
+// to place code into different banks
+#pragma codeseg TEST_C
+
 // some basic types
 typedef unsigned char uint8_t;
 typedef signed char int8_t;

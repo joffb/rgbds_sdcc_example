@@ -23,6 +23,11 @@ _test_tile:
 EntryPoint:
     nop
 
+    ; In the linkerscript we're putting the C code from test.c into bank 2
+    ; Change to bank 2 where the C code is stored
+    ld a, 2
+    ld [rROMB0], a
+
     ; set the value of the blacktile global which is defined in test.c
     ld a, $ff
     ld [_blacktile], a
