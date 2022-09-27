@@ -9,7 +9,9 @@ For bigger projects, you may need to use ROM and RAM banks to store the extra co
 
 The sections which the data and code will go into can be changed on a per-file basis.
 You can use the -bo and -ba options to sdcc, which will append bank numbers to the `_CODE` and `_DATA` section names. e.g.
+
 ```sdcc -bo 2 -ba 3 -c test.c -o test.o```
+
 will put the code in the `_CODE_2` section and the date into the `_DATA_3` section.
 These sections could then be placed into the correct banks using the linker script like this:
 ```
@@ -19,9 +21,11 @@ WRAMX 3
     "_DATA_3"
 ```
 You can also change the name of the code section by using `#pragma codeseg name` at the top of the C file e.g.
+
 ```#pragma codeseg TEST_C```
+
 will put the code into the `_TEST_C` section.
-This could then be linked using the linker script like
+This could then be linked using the linker script like this:
 ```
 ROMX 2
     "_TEST_C"
